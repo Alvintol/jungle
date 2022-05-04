@@ -49,9 +49,13 @@ main section.categories-show {
           color: white;
         }
 
-        button {
+        .btn {
           background: white;
           color: rgba(0, 130, 29, 0.7);
+        }
+        .soldout {
+          background: rgb(255, 0, 0);
+          color: rgba(255, 255, 255, 0.7);
         }
       }
       img {
