@@ -1,9 +1,10 @@
-<h1>Login</h1>
-
-<%= form_tag login_path do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
+<h1 class="text-success d-flex align-items-center justify-content-center">Login</h1>
+<div class="d-flex align-items-center justify-content-center">
+<br>
+  <%= form_tag login_path do %>
+    Email: <%= text_field_tag :email %>
+    Password: <%= password_field_tag :password %>
+    
+    <%= submit_tag "Submit" %>
+  <% end %>
+</div>
