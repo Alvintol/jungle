@@ -1,10 +1,27 @@
 <h1 class="text-success d-flex align-items-center justify-content-center">Login</h1>
 <div class="d-flex align-items-center justify-content-center">
-<br>
-  <%= form_tag login_path do %>
-    Email: <%= text_field_tag :email %>
-    Password: <%= password_field_tag :password %>
-    
-    <%= submit_tag "Submit" %>
+  <br>
+    <%= form_tag login_path do %>
+      <table>
+        <tr>
+          <td>
+            Email 
+          </td>
+          <td>
+            <%= text_field_tag :email %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Password 
+          </td>
+          <td>
+            <%= password_field_tag :password %>
+          </td>
+        </tr>
+    </table>
+    <div class="d-flex align-items-center justify-content-center">
+      <%= submit_tag "Submit", class: 'm-1 btn btn-success btn-rounded' %>
+    </div>
   <% end %>
 </div>

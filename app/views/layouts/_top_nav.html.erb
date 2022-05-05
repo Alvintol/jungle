@@ -68,9 +68,9 @@
         </li>
         <li class="nav-item d-flex align-items-center">
           <% if current_user %>
-            <%= current_user.name %> || <%= link_to "Logout", logout_path, class: "nav-link text-danger d-flex align-items-center" %>
+            <%= current_user.name %> <%= link_to "Logout", logout_path, class: "nav-link text-danger d-flex align-items-center" %>
           <% else %>
-            <%= link_to 'Login', login_path, class: 'nav-link text-muted d-flex align-items-center' %> ||  <%= link_to  'Signup', signup_path, class: 'nav-link text-muted text-success d-flex align-items-center' %>
+            <%= link_to 'Login', login_path, class: 'nav-link d-flex align-items-center' %>  <%= link_to  'Signup', signup_path, class: 'nav-link text-warning d-flex align-items-center' %>
           <% end %>
         </li>
       </ul>
