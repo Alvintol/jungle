@@ -68,9 +68,13 @@
           <% end %>
         </li>
         <% if current_user %>
-          Signed in as <%= current_user.name %> || <%= link_to "Logout", logout_path, class: "nav-link, text-muted, nav-item" %>
+        <li class='nav-item d-flex align-items-center'>
+          <%= current_user.name %> || <%= link_to "   Logout", logout_path, class: "nav-link text-danger" %>
+        </li>
         <% else %>
-          <%= link_to 'Login', login_path, class: 'nav-link, text-muted, nav-item' %> ||  <%= link_to 'Signup', signup_path, class: 'nav-link, text-muted, nav-item' %>
+          <li class='nav-item align-item-center'>
+          <%= link_to 'Login', login_path, class: 'nav-link text-muted' %> ||  <%= link_to '  Signup', signup_path, class: 'nav-link text-muted' %>
+        </li>
         <% end %>
       </ul>
     </div>
