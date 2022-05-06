@@ -68,7 +68,7 @@
         </li>
         <li class="text-white-50 nav-item d-flex align-items-center">
           <% if current_user %>
-            <%= current_user.name %> <%= link_to "Logout", sessions_url, class: "nav-link text-danger d-flex align-items-center" %>
+            <%= current_user.first %> <%= link_to "Logout", "/logout", class: "nav-link text-danger d-flex align-items-center" %>
           <% else %>
             <%= link_to 'Login', new_session_url, class: 'nav-link d-flex align-items-center' %>  <%= link_to  'Signup', new_user_url, class: 'nav-link text-warning d-flex align-items-center' %>
           <% end %>

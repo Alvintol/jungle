@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to login_path
+      redirect_to new_session_url
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path
+    redirect_to new_session_url
   end
 end
