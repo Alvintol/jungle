@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  
-  
-  
-  
+
   get '/logout' => 'sessions#destroy'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
-  resources :sessions, except: [:edit, :update, :show]
+  resources :sessions, except: [:update, :show]
   resources :about, except: [:edit, :update, :show]
   resources :users, except: [:edit, :update, :show]
   
