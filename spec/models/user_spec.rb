@@ -64,6 +64,48 @@ RSpec.describe User, type: :model do
     @user2.save
     expect(@user2.valid?).to be_truthy
     end
+    
+    it 'returns false if first name is nil' do
+    @user2 = User.new({
+      first: nil,
+      last: 'The Human',
+      email: 'Adventure.time@hotmail.com',
+      password: 'password',
+      password_confirmation: 'password'
+    }) 
+    @user.save
+    @user2.save
+    expect(@user2.errors.full_messages).to include "First can't be blank"
+    expect(@user2.valid?).to be_falsey
+    end
+
+    it 'returns false if last name is nil' do
+    @user2 = User.new({
+      first: 'Finn',
+      last: nil,
+      email: 'Adventure.time@hotmail.com',
+      password: 'password',
+      password_confirmation: 'password'
+    }) 
+    @user.save
+    @user2.save
+    expect(@user2.errors.full_messages).to include "Last can't be blank"
+    expect(@user2.valid?).to be_falsey
+    end
+
+    it 'returns false if email is nil' do
+    @user2 = User.new({
+      first: 'Finn',
+      last: 'The Human',
+      email: nil,
+      password: 'password',
+      password_confirmation: 'password'
+    }) 
+    @user.save
+    @user2.save
+    expect(@user2.errors.full_messages).to include "Email can't be blank"
+    expect(@user2.valid?).to be_falsey
+    end
   end
 end
 
