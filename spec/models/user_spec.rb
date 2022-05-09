@@ -10,6 +10,7 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     })
+    @user.save
   end
 
   describe 'Users' do
@@ -32,7 +33,6 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     })
-    @user.save
     @user2.save
     expect(@user2.errors.full_messages).to include "Email has already been taken"
     expect(@user2.valid?).to be_falsey
@@ -46,7 +46,6 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     })
-    @user.save
     @user2.save
     expect(@user2.errors.full_messages).to include "Email has already been taken"
     expect(@user2.valid?).to be_falsey
@@ -60,7 +59,6 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     }) 
-    @user.save
     @user2.save
     expect(@user2.valid?).to be_truthy
     end
@@ -73,10 +71,8 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     }) 
-    @user.save
     @user2.save
     expect(@user2.errors.full_messages).to include "First can't be blank"
-    expect(@user2.valid?).to be_falsey
     end
 
     it 'returns false if last name is nil' do
@@ -87,10 +83,8 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     }) 
-    @user.save
     @user2.save
     expect(@user2.errors.full_messages).to include "Last can't be blank"
-    expect(@user2.valid?).to be_falsey
     end
 
     it 'returns false if email is nil' do
@@ -101,11 +95,34 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     }) 
-    @user.save
     @user2.save
     expect(@user2.errors.full_messages).to include "Email can't be blank"
-    expect(@user2.valid?).to be_falsey
     end
+
+    it 'returns true if password length is at least 8 characters' do
+    @user2 = User.new({
+      first: 'Finn',
+      last: 'The Human',
+      email: 'Adventure.time@hotmail.com',
+      password: 'password',
+      password_confirmation: 'password'
+    }) 
+    @user2.save
+    expect(@user2.password.length).to eql(8)
+    end
+
+    it 'returns true if password length is at least 8 characters' do
+    @user2 = User.new({
+      first: 'Finn',
+      last: 'The Human',
+      email: 'Adventure.time@hotmail.com',
+      password: 'short',
+      password_confirmation: 'short'
+    }) 
+    @user2.save
+    expect(@user2.password.length).to_not eql(8)
+    end
+
   end
 end
 
