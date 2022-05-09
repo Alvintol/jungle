@@ -9,4 +9,14 @@ class User < ApplicationRecord
   # validates :last, presence: true
   # validates :email, presence: true 
   # validates :password_confirmation, presence: true
+
+  def self.authenticate_with_credentials(email, password)
+    email = email.downcase.strip
+    @user = User.find_by_email(email)
+    if @user && @user.authenticate(password)
+      @user
+    else
+      nil
+    end
+  end
 end
