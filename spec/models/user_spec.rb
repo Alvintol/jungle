@@ -35,17 +35,6 @@ RSpec.describe User, type: :model do
     expect(@user2.errors.full_messages).to include "Email has already been taken"
     end
 
-    it 'returns false if email is not unique, also not case-sensitive' do
-    @user2 = User.create({
-      first: 'Bob',
-      last: 'Saget',
-      email: 'BOB.SAGET@hotmail.com',
-      password: 'password',
-      password_confirmation: 'password'
-    })
-    expect(@user2.errors.full_messages).to include "Email has already been taken"
-    end
-
     it 'returns true if email is unique' do
     @user2 = User.create({
       first: 'Finn',
@@ -133,6 +122,11 @@ RSpec.describe User, type: :model do
 
     it 'authenticates with valid whitespace filled email credentials' do
       @user = User.authenticate_with_credentials('    bob.saget@hotmail.com       ', @user.password)
+      expect(@user).to_not be(nil)
+    end
+
+    it 'authenticates with valid email credentials NOT case sensitive' do
+      @user = User.authenticate_with_credentials('BOB.SAGET@hotmail.com', @user.password)
       expect(@user).to_not be(nil)
     end
   end
