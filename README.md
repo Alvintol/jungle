@@ -2,14 +2,14 @@
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
 
-!["Main Page"]()
-!["Login Page"]()
-!["Main Products Page with sold out display"]()
-!["Categories page"]()
-!["Main page with Login credentials"]()
-!["My cart page"]()
-!["New product imput page"]()
-!["My orders page"]()
+!["Main Page"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/Main.png?raw=true)
+!["Login Page"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/LoginPage.png?raw=true)
+!["Main Products Page with sold out display"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/MainSoldHover.png?raw=true)
+!["Categories page"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/CategorySingle.png?raw=true)
+!["Main page with Login credentials"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/MainLoggedIn.png?raw=true)
+!["My cart page"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/MyCart.png?raw=true)
+!["New product imput page"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/NewProducts.png?raw=true)
+!["My orders page"](https://github.com/Alvintol/jungle/blob/master/app/assets/images/Order.png?raw=true)
 
 ## Setup
 
