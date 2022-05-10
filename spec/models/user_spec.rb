@@ -16,7 +16,6 @@ RSpec.describe User, type: :model do
     it 'returns true if created User is valid' do
       expect(@user.valid?).to be_truthy
     end
-
     
     it 'returns false if created User is not valid' do
       @user.email = nil
