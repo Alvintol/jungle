@@ -25,7 +25,27 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-- Rails 6.1 [Rails Guide](http://guides.rubyonrails.org/v6.1/)
+- Rails 6.1
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+- rails/actioncable
+- rails/activestorage 
+- rails/ujs
+- rails/webpacker 
+- turbolinks 
+- ebpack 
+- puma
+- sass-rails
+- turbolinks
+- jbuilder
+- jquery-rails
+- sdoc
+- bcrypt
+- bootstrap
+- bootsnap
+- font-awesome-rails
+- money-rails
+- rmagick
+- faker
+- carrierwave
